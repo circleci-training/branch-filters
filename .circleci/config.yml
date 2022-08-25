@@ -17,14 +17,6 @@ jobs:
       - run:
           name: The is the test job
           command: echo 'Testing, testing'
-            
-  deploy:
-    docker:
-      - image: cimg/aws:2022.06
-    steps:
-      - run:
-          name: This is the deploy job
-          command: echo 'We have lift-off!'
 
 workflows:
   build-test-deploy:
@@ -35,8 +27,7 @@ workflows:
               only:
                 - main
       - test: 
-          requires:
-            - build
-      - deploy:
-          requires:
-            - test
+          filters:
+            branches:
+              only:
+                - dev
