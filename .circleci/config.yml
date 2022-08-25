@@ -19,7 +19,7 @@ jobs:
           command: echo 'Testing, testing'
 
 workflows:
-  build-test-deploy:
+  build-test:
     jobs:
       - build:
           filters:
