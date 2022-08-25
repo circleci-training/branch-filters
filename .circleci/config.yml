@@ -49,10 +49,3 @@ workflows:
       - deploy:
           requires:
             - test
- 
-  tagging:
-    jobs:
-      - tag-me:
-          filters:
-            tags:
-              only: /^config-test.*/
