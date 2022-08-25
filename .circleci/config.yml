@@ -25,15 +25,6 @@ jobs:
       - run:
           name: This is the deploy job
           command: echo 'We have lift-off!'
-          
-  tag-me:
-    docker:
-      - image: cimg/base:2021.04
-    steps:
-      - run:
-          name: Tagging
-          command: echo 'You have been tagged!'
-    
 
 workflows:
   build-test-deploy:
